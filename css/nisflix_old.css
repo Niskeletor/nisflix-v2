@@ -1,0 +1,35 @@
+
+
+.pageTitleWithDefaultLogo {
+    background-image: url(https://i.postimg.cc/5tHXsLDf/nisflix.png);
+  }
+
+#loginPage {
+  background: url('https://bramptonist.com/wp-content/uploads/2018/06/netflix-image.jpg');
+  background-size: cover;
+}
+.sections.homeSectionsContainer::before {
+    content: '';
+    display: block;
+    background-image: url(https://i.postimg.cc/63kYcf5j/nisflix-XXL.png);
+    width: 80%;
+    margin: 1em auto 0 auto;
+    height: 16em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
+
+}
+
+#loginPage .padded-left.padded-right.padded-bottom-page {
+    background: #000000bf;
+  position: absolute;
+  top: calc(50% + 50px); /* 50% + la mitad de la altura de la imagen + espacio adicional */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 245px;
+  
+    border-radius: 10px;
+  
+    }
