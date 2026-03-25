@@ -52,10 +52,10 @@
 
 /* ---- Media Bar — staggered content entrance animation ----
  *
- * Cuando el plugin JS pone .active en un .slide, los elementos
- * de contenido entran escalonados con fade + movimiento.
- * fill-mode: both → antes del delay el elemento está en opacity:0
- *                    después de la animación queda en opacity:1
+ * El plugin ya gestiona opacity en el .slide padre (0→1 al activarse).
+ * Solo añadimos animaciones de entrada en los elementos de contenido
+ * cuando el slide se vuelve activo. fill-mode: both garantiza que
+ * empiecen en opacity:0 antes del delay sin necesitar una regla base.
  *
  * Cascada de tiempos:
  *   0.15s → logo título
@@ -65,18 +65,6 @@
  *   0.65s → géneros
  *   0.80s → botón Reproducir
  */
-
-/* Estado base: contenido de slides inactivos invisible */
-#slides-container .slide .logo-container,
-#slides-container .slide .featured-content,
-#slides-container .slide .info-container,
-#slides-container .slide .plot-container,
-#slides-container .slide .genre,
-#slides-container .slide .button-container {
-    opacity: 0;
-}
-
-/* Activación: animaciones escalonadas */
 #slides-container .slide.active .logo-container {
     animation: slideContentIn 0.7s cubic-bezier(0.25, 0.8, 0.25, 1) 0.15s both !important;
 }
@@ -101,15 +89,13 @@
     animation: slideContentUp 0.5s ease-out 0.80s both !important;
 }
 
-/* Respeta preferencias de movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
-    #slides-container .slide .logo-container,
-    #slides-container .slide .featured-content,
-    #slides-container .slide .info-container,
-    #slides-container .slide .plot-container,
-    #slides-container .slide .genre,
-    #slides-container .slide .button-container {
-        opacity: 1 !important;
+    #slides-container .slide.active .logo-container,
+    #slides-container .slide.active .featured-content,
+    #slides-container .slide.active .info-container,
+    #slides-container .slide.active .plot-container,
+    #slides-container .slide.active .genre,
+    #slides-container .slide.active .button-container {
         animation: none !important;
     }
 }
