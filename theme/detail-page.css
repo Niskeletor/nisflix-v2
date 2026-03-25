@@ -1,65 +1,72 @@
 /*
  * NISFLIX Theme — detail-page.css
  * Hero section, títulos, metadata, cast, tags
+ *
+ * SELECTORES REALES (verificados con DOM inventory 2026-03-25):
+ *   Título hero → h1.itemName.infoText  (NO .detailPagePrimaryTitle que no existe)
+ *   Ribbon info → .detailRibbon
+ *   Botón play  → .btnPlay.detailButton
  */
 
-/* Título principal */
-.detailPagePrimaryTitle {
+/* ---- Título hero (h1.itemName) ---- */
+.itemDetailPage h1.itemName {
     font-family: 'Bebas Neue', Impact, 'Arial Black', sans-serif !important;
     font-weight: 400 !important;
     letter-spacing: 0.08em !important;
     color: var(--netflix-text) !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
+    margin-bottom: 0.4rem !important;
 }
 
-/* Desktop */
 @media (min-width: 1025px) {
-    .detailPagePrimaryTitle {
-        font-size: 2.8rem !important;
-        text-shadow: 0 1px 2px rgba(0,0,0,0.5) !important;
-        margin-bottom: 0.8rem !important;
+    .itemDetailPage h1.itemName {
+        font-size: clamp(2rem, 3vw, 3.5rem) !important;
     }
 }
-
-/* Tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .detailPagePrimaryTitle {
-        font-size: 3rem !important;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.6) !important;
-    }
+    .itemDetailPage h1.itemName { font-size: 2.8rem !important; }
 }
-
-/* Mobile */
 @media (max-width: 768px) {
-    .detailPagePrimaryTitle {
-        font-size: 3.5rem !important;
-        letter-spacing: 0.15em !important;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.8), 0 4px 8px rgba(229,9,20,0.2) !important;
-        margin-bottom: 1rem !important;
-        background: linear-gradient(135deg, #ffffff, #f2f2f2) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        background-clip: text !important;
-    }
-
-    .detailPagePrimaryContainer {
-        background: linear-gradient(135deg, rgba(20,20,20,0.3), rgba(25,25,25,0.2) 50%, rgba(15,15,15,0.4)) !important;
-        backdrop-filter: blur(10px) !important;
-        border-radius: var(--radius-lg) !important;
-        padding: var(--gap-lg) !important;
-        margin-bottom: var(--gap-lg) !important;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 2px 8px rgba(229,9,20,0.05) !important;
-        border: 1px solid rgba(255,255,255,0.02) !important;
-    }
+    .itemDetailPage h1.itemName { font-size: 2.4rem !important; }
 }
 
-/* Subtítulo y metadata */
-.detailPageSubTitle,
-.itemMiscInfo {
-    font-size: 1.1rem !important;
-    color: var(--netflix-text-muted) !important;
-    font-weight: 500 !important;
+/* ---- Botones de acción en detail page ---- */
+
+/* Botones secundarios: ghost circular */
+.mainDetailButtons .btnShuffle,
+.mainDetailButtons .btnPlaystate,
+.mainDetailButtons .btnUserRating,
+.mainDetailButtons .btnMoreCommands,
+.mainDetailButtons .btnPlayTrailer,
+.mainDetailButtons .btnDownload {
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    color: var(--netflix-text) !important;
+    background: transparent !important;
+    transition: all var(--transition-fast) !important;
+}
+
+.mainDetailButtons .btnShuffle:hover,
+.mainDetailButtons .btnPlaystate:hover,
+.mainDetailButtons .btnUserRating:hover,
+.mainDetailButtons .btnMoreCommands:hover,
+.mainDetailButtons .btnPlayTrailer:hover,
+.mainDetailButtons .btnDownload:hover {
+    border-color: var(--netflix-red) !important;
+    background: rgba(229,9,20,0.1) !important;
+    color: white !important;
+}
+
+/* ---- Metadata de ítem ---- */
+/* Subtítulo y contenedor de badges */
+.itemMiscInfo-primary {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.4rem !important;
+    align-items: center !important;
     margin-bottom: 0.8rem !important;
-    letter-spacing: 0.02em !important;
 }
 
 /* Section titles con línea roja */
@@ -119,7 +126,33 @@ h2:not(.cardText):not(.detailPagePrimaryTitle):not(.detailPageSubTitle)::after {
     margin: 0.2rem 0.3rem 0.2rem 0 !important;
 }
 
-/* Overview — solo mobile */
+/* ---- Grupo de metadatos (Género, Estudios, etc.) ---- */
+.detailsGroupItem {
+    display: flex !important;
+    align-items: baseline !important;
+    gap: 0.8rem !important;
+    padding: 0.4rem 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+}
+
+.detailsGroupItem:last-child {
+    border-bottom: none !important;
+}
+
+.detailsGroupItem .label {
+    color: var(--netflix-text-muted) !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    min-width: 80px !important;
+    flex-shrink: 0 !important;
+}
+
+.detailsGroupItem .content {
+    color: var(--netflix-text) !important;
+    font-weight: 500 !important;
+}
+
+/* ---- Overview — solo mobile ---- */
 @media (max-width: 768px) {
     .overview,
     .itemDetailGalleryContent,

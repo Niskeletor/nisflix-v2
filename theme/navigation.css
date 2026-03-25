@@ -99,11 +99,21 @@ html body button[id^="customTabButton_"].show-focus:focus {
 
 html body .emby-tab-button-active {
     color: white !important;
-    border-color: var(--netflix-red) !important;
+    border-bottom: 3px solid var(--netflix-red) !important;
 }
 
 html body .emby-tab-button:focus-visible,
 html body button[id^="customTabButton_"]:focus-visible {
     outline: 2px solid var(--netflix-red) !important;
     outline-offset: 2px !important;
+}
+
+/* Scroll buttons de las secciones — más visibles */
+.emby-scrollbuttons-button {
+    opacity: 0.6 !important;
+    transition: opacity var(--transition-fast) !important;
+}
+
+.emby-scrollbuttons-button:hover {
+    opacity: 1 !important;
 }

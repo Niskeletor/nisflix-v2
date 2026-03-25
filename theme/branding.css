@@ -95,12 +95,8 @@
 
 #loginPage .inputLabelFocused { color: var(--netflix-red) !important; }
 
-/* Login buttons */
-#loginPage .raised-button,
-#loginPage .button-accent,
-#loginPage .raisedButton-accent,
-#loginPage .button-submit,
-#loginPage .emby-button {
+/* Login — botón primario (submit) */
+#loginPage .button-submit {
     background: linear-gradient(135deg, var(--netflix-red), #f40612, #cc0000) !important;
     border: none !important;
     color: white !important;
@@ -112,14 +108,29 @@
     box-shadow: 0 4px 15px rgba(229,9,20,0.4), 0 0 0 1px rgba(255,255,255,0.1) !important;
 }
 
-#loginPage .raised-button:hover,
-#loginPage .button-accent:hover,
-#loginPage .raisedButton-accent:hover,
-#loginPage .button-submit:hover,
-#loginPage .emby-button:hover {
+#loginPage .button-submit:hover {
     transform: translateY(-4px) scale(1.02) !important;
     box-shadow: 0 15px 35px rgba(229,9,20,0.6), 0 5px 15px rgba(229,9,20,0.4) !important;
     filter: brightness(1.1) !important;
+}
+
+/* Login — botones secundarios (Quick Connect, Forgot Password) */
+#loginPage .btnQuick,
+#loginPage .btnForgotPassword {
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    color: rgba(255,255,255,0.8) !important;
+    font-weight: 500 !important;
+    border-radius: var(--radius-lg) !important;
+    transition: all var(--transition-fast) !important;
+    box-shadow: none !important;
+}
+
+#loginPage .btnQuick:hover,
+#loginPage .btnForgotPassword:hover {
+    background: rgba(255,255,255,0.14) !important;
+    border-color: rgba(255,255,255,0.35) !important;
+    color: white !important;
 }
 
 #loginPage h1 {
