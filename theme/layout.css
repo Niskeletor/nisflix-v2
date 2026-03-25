@@ -1,0 +1,51 @@
+/*
+ * NISFLIX Theme — layout.css
+ * Header, drawer, containers, modals
+ */
+
+/* Header */
+.skinHeader {
+    background-color: rgba(20, 20, 20, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.layout-mobile .skinHeader {
+    background-color: rgba(20, 20, 20, 0.95) !important;
+}
+
+/* Sidebar drawer */
+.mainDrawer-scrollContainer {
+    background-color: rgba(20, 20, 20, 0.98) !important;
+}
+
+/* Content areas — exclude Media Bar */
+.content-primary:not(.slideshow-container):not([class*="media-bar"]) {
+    background-color: var(--netflix-dark) !important;
+}
+
+/* Detail page containers — exclude Media Bar */
+.detailPageContent:not(.slideshow-container):not([class*="media-bar"]):not(.backdrop) {
+    background: linear-gradient(135deg, rgba(20,20,20,0.9), rgba(15,15,15,0.95)) !important;
+    animation: fadeInUp 0.6s ease-out !important;
+}
+
+.detailPageWrapperContainer:not(.slideshow-container):not([class*="media-bar"]):not(.backdrop) {
+    background: linear-gradient(180deg, transparent, rgba(20,20,20,0.8)) !important;
+    scroll-behavior: smooth !important;
+}
+
+/* Modals */
+.dialogContainer {
+    background-color: rgba(3, 3, 3, 0.85) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+.dialogBackdrop {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Media Bar surgical fix — fade gradient */
+.backdrop.with-video {
+    mask-image: linear-gradient(to right, black 30%, transparent 85%) !important;
+    -webkit-mask-image: linear-gradient(to right, black 30%, transparent 85%) !important;
+}

@@ -1,0 +1,31 @@
+/*
+ * NISFLIX Theme — variables.css
+ * CSS custom properties
+ */
+
+:root {
+    --netflix-red:        #e50914;
+    --netflix-red-hover:  #f40612;
+    --netflix-dark:       #141414;
+    --netflix-darker:     #0f0f0f;
+    --netflix-text:       #f2f2f2;
+    --netflix-text-muted: #b3b3b3;
+    --netflix-accent:     rgba(229, 9, 20, 0.8);
+
+    /* Spacing scale */
+    --gap-xs:  0.4rem;
+    --gap-sm:  0.8rem;
+    --gap-md:  1.2rem;
+    --gap-lg:  1.8rem;
+    --gap-xl:  2.5rem;
+
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+    --radius-pill: 20px;
+
+    /* Transitions */
+    --transition-fast:   0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

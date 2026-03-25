@@ -1,0 +1,22 @@
+/*
+ * NISFLIX Theme — main.css
+ * Punto de entrada — importa todos los módulos en orden
+ *
+ * CDN URL (jsDelivr):
+ * https://cdn.jsdelivr.net/gh/Niskeletor/nisflix-v2@main/theme/main.css
+ *
+ * Para versión fija (recomendado en producción):
+ * https://cdn.jsdelivr.net/gh/Niskeletor/nisflix-v2@v1.0.0/theme/main.css
+ */
+
+@import url('./fonts.css');
+@import url('./variables.css');
+@import url('./animations.css');
+@import url('./base.css');
+@import url('./layout.css');
+@import url('./cards.css');
+@import url('./navigation.css');
+@import url('./buttons.css');
+@import url('./forms.css');
+@import url('./detail-page.css');
+@import url('./branding.css');

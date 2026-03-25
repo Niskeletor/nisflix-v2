@@ -1,0 +1,33 @@
+/*
+ * NISFLIX Theme — base.css
+ * Body, global resets, scrollbars
+ */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    background-color: var(--netflix-dark) !important;
+    color: var(--netflix-text) !important;
+}
+
+/* Remove tap highlight on touch devices */
+* {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* Headings — UI only (exclude video player) */
+.pageTitle,
+.sectionTitle,
+.detailPagePrimaryTitle,
+h1:not(.videoPlayerContainer h1):not(.videoOsd h1),
+h2:not(.videoPlayerContainer h2):not(.videoOsd h2),
+h3:not(.videoPlayerContainer h3):not(.videoOsd h3) {
+    font-family: 'Bebas Neue', Impact, 'Arial Black', sans-serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.1em !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar              { width: 8px !important; height: 8px !important; }
+::-webkit-scrollbar-track        { background: var(--netflix-darker) !important; }
+::-webkit-scrollbar-thumb        { background: rgba(179,179,179,0.3) !important; border-radius: var(--radius-sm) !important; }
+::-webkit-scrollbar-thumb:hover  { background: var(--netflix-accent) !important; }

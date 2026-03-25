@@ -1,0 +1,141 @@
+/*
+ * NISFLIX Theme — buttons.css
+ * FAB, play, detail, action buttons
+ */
+
+/* Global accent buttons */
+.button-accent,
+.raisedButton-accent {
+    background-color: var(--netflix-red) !important;
+    color: var(--netflix-text) !important;
+    border: none !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.button-accent:hover,
+.raisedButton-accent:hover {
+    background-color: var(--netflix-red-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(229,9,20,0.4) !important;
+    transition: all var(--transition-fast) !important;
+}
+
+/* FAB / Play / Resume */
+.fab, .btnPlay, .btnResume {
+    min-width: 56px !important;
+    min-height: 56px !important;
+    border-radius: 50% !important;
+    background: var(--netflix-red) !important;
+    color: white !important;
+    box-shadow: 0 4px 8px rgba(229,9,20,0.4) !important;
+    transition: all var(--transition-fast) !important;
+    border: none !important;
+}
+
+.fab:hover, .btnPlay:hover, .btnResume:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 6px 16px rgba(229,9,20,0.6) !important;
+    background: linear-gradient(135deg, var(--netflix-red), #ff1e2d) !important;
+}
+
+.fab .material-icons,
+.btnPlay .material-icons,
+.btnResume .material-icons { font-size: 24px !important; margin: 0 !important; }
+
+/* Detail page buttons container */
+.detailButtons {
+    display: flex !important;
+    gap: var(--gap-md) !important;
+    flex-wrap: wrap !important;
+    margin: var(--gap-lg) 0 !important;
+}
+
+/* Detail — primary play button */
+.detailButtons .button-accent,
+.detailButtons .raisedButton-accent,
+.detailButtons .btnPlay {
+    background: linear-gradient(90deg, var(--netflix-red), #f40612) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    min-height: 52px !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: 0 4px 12px rgba(229,9,20,0.4), 0 2px 8px rgba(0,0,0,0.3) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.detailButtons .button-accent:hover,
+.detailButtons .raisedButton-accent:hover,
+.detailButtons .btnPlay:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 8px 20px rgba(229,9,20,0.6), 0 4px 12px rgba(0,0,0,0.4) !important;
+}
+
+/* Detail — secondary buttons (favorito, visto, más) */
+.detailButtons .paper-icon-button-light:not(.button-accent),
+.detailButtons .btnMoreCommands,
+.detailButtons .btnToggleWatched,
+.detailButtons .btnFavorite {
+    min-width: 52px !important;
+    min-height: 52px !important;
+    border-radius: 50% !important;
+    background: rgba(42,42,42,0.9) !important;
+    border: 2px solid rgba(255,255,255,0.15) !important;
+    transition: all var(--transition-fast) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.detailButtons .paper-icon-button-light:not(.button-accent):hover,
+.detailButtons .btnMoreCommands:hover,
+.detailButtons .btnToggleWatched:hover,
+.detailButtons .btnFavorite:hover {
+    background: rgba(60,60,60,0.95) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3) !important;
+}
+
+.detailButtons .material-icons { font-size: 24px !important; margin: 0 !important; }
+
+/* Favorite — activo */
+.btnFavorite[data-isfavorite="true"] {
+    background: rgba(229,9,20,0.2) !important;
+    border-color: var(--netflix-red) !important;
+    color: var(--netflix-red) !important;
+}
+
+/* Visto — activo */
+.btnToggleWatched[data-played="true"] {
+    background: rgba(0,150,0,0.2) !important;
+    border-color: #00cc00 !important;
+    color: #00cc00 !important;
+}
+
+/* Generic emby buttons */
+.raised-button:hover,
+.emby-button:hover { transform: translateY(-1px) !important; }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .fab, .btnPlay, .btnResume { min-width: 64px !important; min-height: 64px !important; }
+    .fab .material-icons, .btnPlay .material-icons, .btnResume .material-icons { font-size: 28px !important; }
+
+    .detailButtons { flex-direction: column !important; gap: var(--gap-md) !important; }
+    .detailButtons .button-accent,
+    .detailButtons .raisedButton-accent { width: 100% !important; text-align: center !important; min-height: 56px !important; font-size: 18px !important; }
+    .detailButtons .paper-icon-button-light:not(.button-accent),
+    .detailButtons .btnMoreCommands,
+    .detailButtons .btnToggleWatched,
+    .detailButtons .btnFavorite { min-width: 56px !important; min-height: 56px !important; }
+    .detailButtons .material-icons { font-size: 28px !important; }
+}
+
+@media (min-width: 769px) {
+    .detailButtons { flex-direction: row !important; }
+}

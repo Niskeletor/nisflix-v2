@@ -1,0 +1,95 @@
+/*
+ * NISFLIX Theme — forms.css
+ * Inputs, selects, checkboxes, progress
+ */
+
+/* Inputs */
+.emby-input,
+.emby-textarea,
+.emby-select {
+    background-color: rgba(24,24,24,0.8) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    color: var(--netflix-text) !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus {
+    border-color: var(--netflix-red) !important;
+    box-shadow: 0 0 0 2px rgba(229,9,20,0.3) !important;
+    outline: none !important;
+}
+
+/* Progress bars */
+.itemProgressBar-inner       { background-color: var(--netflix-red) !important; }
+.mdl-slider-background-lower { background-color: var(--netflix-red) !important; }
+
+/* Loading spinners */
+.progressring-spiner,
+.loading-spinner,
+.mdl-spinner,
+.spinner,
+.loadingSpinner,
+.emby-progressring,
+.loading,
+.loading-ring {
+    border-color: var(--netflix-red) !important;
+    color: var(--netflix-red) !important;
+}
+
+.progressring-spiner *,
+.loading-spinner *,
+.mdl-spinner *,
+.emby-progressring * {
+    border-color: var(--netflix-red) !important;
+    stroke: var(--netflix-red) !important;
+}
+
+/* Checkboxes — usando la estructura real de Jellyfin (.checkboxOutline) */
+.checkboxOutline {
+    width: 20px !important;
+    height: 20px !important;
+    background: transparent !important;
+    border: 2px solid rgba(255,255,255,0.3) !important;
+    border-radius: 3px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all var(--transition-fast) !important;
+    margin-right: 8px !important;
+}
+
+.checkboxIcon      { color: white !important; font-size: 16px !important; }
+.checkboxIcon-unchecked { display: none !important; }
+
+input[type="checkbox"]:checked ~ .checkboxOutline {
+    background: var(--netflix-red) !important;
+    border-color: var(--netflix-red) !important;
+}
+
+/* Selection indicators */
+.emby-checkbox:checked,
+.checkboxContainer-checked,
+.radioButton-selected,
+.listItem-selected,
+.selectMenu-item-selected {
+    background-color: var(--netflix-red) !important;
+    border-color: var(--netflix-red) !important;
+}
+
+.selectedIndicator,
+.checkmark,
+.tick,
+.checkboxIcon,
+.radioButtonIcon {
+    color: var(--netflix-red) !important;
+    fill: var(--netflix-red) !important;
+}
+
+.emby-checkbox:focus,
+.emby-radio:focus,
+.selectMenu-item:focus {
+    box-shadow: 0 0 0 2px rgba(229,9,20,0.3) !important;
+    border-color: var(--netflix-red) !important;
+}

@@ -1,0 +1,109 @@
+/*
+ * NISFLIX Theme — navigation.css
+ * Sidebar, nav items, breadcrumbs, header tabs
+ */
+
+/* Drawer */
+.mainDrawer {
+    transition: transform var(--transition-normal) !important;
+    backdrop-filter: blur(20px) !important;
+    border-right: 1px solid rgba(229,9,20,0.1) !important;
+}
+
+.mainDrawer.drawer-open {
+    box-shadow: 4px 0 24px rgba(0,0,0,0.6) !important;
+}
+
+.mainDrawer .drawerHeader {
+    background: linear-gradient(135deg, rgba(20,20,20,0.95), rgba(229,9,20,0.05)) !important;
+    border-bottom: 1px solid rgba(229,9,20,0.2) !important;
+    padding: var(--gap-md) !important;
+}
+
+/* Nav items */
+.navMenuOption {
+    transition: all var(--transition-normal) !important;
+    border-radius: var(--radius-lg) !important;
+    margin: 2px 8px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.navMenuOption:hover:not(.navMenuOption-selected) {
+    background: linear-gradient(90deg, rgba(229,9,20,0.1), rgba(229,9,20,0.05)) !important;
+    transform: translateX(4px) !important;
+    box-shadow: 0 2px 8px rgba(229,9,20,0.2) !important;
+}
+
+.navMenuOption-selected {
+    background: linear-gradient(90deg, var(--netflix-red), rgba(229,9,20,0.8)) !important;
+    transform: translateX(6px) !important;
+    box-shadow: 0 4px 12px rgba(229,9,20,0.4) !important;
+    border-left: 3px solid var(--netflix-red-hover) !important;
+    border-radius: var(--radius-lg) !important;
+}
+
+.navMenuOption .navMenuText          { font-weight: 500 !important; font-size: 0.95rem !important; letter-spacing: 0.02em !important; }
+.navMenuOption-selected .navMenuText { font-weight: 600 !important; text-shadow: 0 1px 2px rgba(0,0,0,0.3) !important; }
+
+.navMenuOption .navMenuIcon,
+.navMenuOption .material-icons {
+    transition: transform var(--transition-fast) !important;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3)) !important;
+}
+
+.navMenuOption:hover .navMenuIcon,
+.navMenuOption:hover .material-icons { transform: scale(1.1) !important; }
+
+.navMenuOption-selected .navMenuIcon,
+.navMenuOption-selected .material-icons {
+    transform: scale(1.15) !important;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)) !important;
+}
+
+/* Breadcrumbs */
+.breadcrumb,
+.breadcrumbContainer,
+.viewMenuBar {
+    background: linear-gradient(90deg, rgba(20,20,20,0.9), transparent) !important;
+    padding: var(--gap-sm) var(--gap-md) !important;
+    border-bottom: 1px solid rgba(229,9,20,0.1) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.breadcrumbItem,
+.breadcrumb-item,
+.viewMenuBarText {
+    color: var(--netflix-text-muted) !important;
+    transition: color var(--transition-fast) !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+}
+
+.breadcrumbItem:hover,
+.breadcrumb-item:hover {
+    color: var(--netflix-red) !important;
+    text-shadow: 0 1px 2px rgba(229,9,20,0.3) !important;
+}
+
+/* Header tabs — Netflix red hover (override default blue) */
+html body .emby-tab-button:hover,
+html body .emby-tab-button.show-focus:focus,
+html body button[id^="customTabButton_"]:hover,
+html body button[id^="customTabButton_"].show-focus:focus {
+    color: var(--netflix-red) !important;
+    border-color: var(--netflix-red) !important;
+    text-shadow: 0 0 8px rgba(229,9,20,0.5) !important;
+    transition: all var(--transition-fast) !important;
+}
+
+html body .emby-tab-button-active {
+    color: white !important;
+    border-color: var(--netflix-red) !important;
+}
+
+html body .emby-tab-button:focus-visible,
+html body button[id^="customTabButton_"]:focus-visible {
+    outline: 2px solid var(--netflix-red) !important;
+    outline-offset: 2px !important;
+}
